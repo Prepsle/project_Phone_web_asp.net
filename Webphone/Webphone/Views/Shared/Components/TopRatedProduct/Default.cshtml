@@ -1,0 +1,39 @@
+﻿@using Webphone.Models;
+@using Webphone.Ultilities;
+@model IList<Products>
+
+<div class="col-lg-4 col-md-6">
+    <div class="latest-product__text">
+        <h4>Top Rated Products</h4>
+        <div class="latest-product__slider owl-carousel">
+            <div class="latest-prdouct__slider__item">
+                @foreach (var item in Model)
+                {
+                    <a href="#" class="latest-product__item">
+                        <div class="latest-product__item__pic">
+                            <img src="@item.Images" alt="">
+                        </div>
+                        <div class="latest-product__item__text">
+                            <h6>@item.Names</h6>
+                            <span>$@item.Price</span>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="latest-prdouct__slider__item">
+                @foreach (var item in Model.OrderByDescending(p => p.ProductID))
+                {
+                    <a href="#" class="latest-product__item">
+                        <div class="latest-product__item__pic">
+                            <img src="@item.Images" alt="">
+                        </div>
+                        <div class="latest-product__item__text">
+                            <h6>@item.Names</h6>
+                            <span>$@item.Price</span>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

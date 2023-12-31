@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<View_Categories_Products> productCategories = ViewBag.productCategories;
+    List<Categories> listcategories = ViewBag.listcategories;
+}
+@using Webphone.Ultilities;
+@model IList<Webphone.Models.View_Categories_Products>
+@using Webphone.Models;
+
+@await Component.InvokeAsync("ImageBanner")
+<!-- Latest Product Section Begin -->
+<section class="latest-product spad">
+    <div class="container">
+        <div class="row">
+            @await Component.InvokeAsync("LatestProduct")
+            @await Component.InvokeAsync("TopRatedProduct")
+            @await Component.InvokeAsync("ReviewProduct")
+        </div>
+    </div>
+</section>
+<!-- Latest Product Section End -->
+    @await Component.InvokeAsync("Blog") 

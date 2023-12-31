@@ -1,0 +1,10 @@
+﻿@model IList<Categories>
+@using Webphone.Ultilities;
+
+        <ul>
+            @foreach(var category in Model)
+            {
+                string url = Functions.TitleSlugGeneration("List_p", category.Names, category.CategoryID);
+                <li><a href="/@url">@category.Names</a></li>
+            }
+        </ul>

@@ -1,0 +1,21 @@
+﻿@model IList<Categories>
+@using Webphone.Ultilities;
+
+<!-- Categories Section Begin -->
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="categories__slider owl-carousel">
+                @foreach(var item in Model)
+                {
+                    string url = Functions.TitleSlugGeneration("List_p", item.Names, item.CategoryID);
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" style="background-size:contain !important ;background-position:center" data-setbg="@item.Images">
+                            <h5><a href="/@url">@item.Names</a></h5>
+                        </div>
+                    </div>
+                }
+        </div>
+    </div>
+</section>
+<!-- Categories Section End -->

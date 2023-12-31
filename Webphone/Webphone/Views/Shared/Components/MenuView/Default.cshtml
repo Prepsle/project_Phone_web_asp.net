@@ -1,0 +1,66 @@
+﻿@model IList<Menu>
+@using Webphone.Ultilities;
+
+@{<header class="header">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div style="height:80px ; width:210px" class="header__logo">
+                        <a href="#"><img style="height:50px ; width:119px" src="~/img/logo1.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                <ul>
+                    @foreach (var menu in Model.Where(m => m.Levels == 1).OrderBy(n => n.Menu_Order))
+                    {
+                        var Pid = menu.Menu_Id;
+                        @*string url = Functions.TitleSlugGeneration("list", menu.Menu_Name, menu.Menu_Id );
+                        if (!string.IsNullOrEmpty(menu.Link))
+                        {
+                            url = menu.Link;
+                        }
+                        *@
+                        var Smenu = Model.Where(p => p.Parent_Id == Pid).OrderBy(p => p.Menu_Order).ToList();
+                            @if (Smenu.Count == 0)
+                            {
+                                    <li class="active"><a href="/@menu.ControllerName">@menu.Menu_Name</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/@menu.ControllerName">@menu.Menu_Name</a>
+                                    <ul class="header__menu__dropdown">
+                                        @foreach (var smn in Smenu)
+                                        {
+                                                string url1 = Functions.TitleSlugGeneration("list", smn.Menu_Name, smn.Menu_Id);
+                                                if (!string.IsNullOrEmpty(smn.Link))
+                                                {
+                                                    url1 = smn.Link;
+                                                }
+                                                <li><a href="/@url1">@smn.Menu_Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                    }
+                </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+}

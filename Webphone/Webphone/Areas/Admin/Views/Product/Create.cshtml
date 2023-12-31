@@ -1,0 +1,145 @@
+﻿@model Webphone.Models.Products
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+<h1>Thêm mới</h1>
+
+<h4>Sản phẩm</h4>
+<hr />
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Thêm mới sản phẩm</h5>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Names" class="control-label">Tên sản phẩm</label>
+                    <input asp-for="Names" class="form-control" />
+                    <span asp-validation-for="Names" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label">Giá tiền</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StockQuantity" class="control-label">Giảm giá</label>
+                    <input asp-for="StockQuantity" class="form-control" />
+                    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="CategoryID">Danh mục sản phẩm </label>
+                    @{
+                        var mnList = ViewBag.mnList ?? new List<SelectListItem>();
+                    }
+
+                    <select asp-for="CategoryID" class="form-control"
+                            asp-items="@(new SelectList(mnList, "Value", "Text"))"></select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="control-label">Hình ảnh</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-success" type="button" onclick="openDialog()">Choose a pic</button>
+                        </div>
+                        <input type="text" class="form-control" asp-for="Images" id="file_input" aria-describedby="button-addon2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OS" class="control-label">Hệ điều hành</label>
+                    <input asp-for="OS" class="form-control" />
+                    <span asp-validation-for="OS" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Camera_TRC" class="control-label">Camere trước</label>
+                    <input asp-for="Camera_TRC" class="form-control" />
+                    <span asp-validation-for="Camera_TRC" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Camere_S" class="control-label">Camera sau</label>
+                    <input asp-for="Camere_S" class="form-control" />
+                    <span asp-validation-for="Camere_S" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Chip" class="control-label"></label>
+                    <input asp-for="Chip" class="form-control" />
+                    <span asp-validation-for="Chip" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RAM" class="control-label"></label>
+                    <input asp-for="RAM" class="form-control" />
+                    <span asp-validation-for="RAM" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SSD" class="control-label">Dung lượng lưu trữ</label>
+                    <input asp-for="SSD" class="form-control" />
+                    <span asp-validation-for="SSD" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SIM" class="control-label"></label>
+                    <input asp-for="SIM" class="form-control" />
+                    <span asp-validation-for="SIM" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LIB" class="control-label">Thông số PIN</label>
+                    <input asp-for="LIB" class="form-control" />
+                    <span asp-validation-for="LIB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Screen" class="control-label">Màn hình</label>
+                    <input asp-for="Screen" class="form-control" />
+                    <span asp-validation-for="Screen" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Color" class="control-label">Màu</label>
+                    <input asp-for="Color" class="form-control" />
+                    <span asp-validation-for="Color" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-12">
+                    <label asp-for="Descriptions">Đánh giá chi tiết</label>
+                    <textarea asp-for="Descriptions" class="form-control"></textarea>
+                </div>
+                <div class="form-group mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("IsActive", false)
+                        Hiển thị
+                    </label>
+                </div>
+                <div class="form-group mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("Latest_Product", false)
+                        Sản phẩm mới nhất
+                    </label>
+                </div>
+                <div class="form-group mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("Top_Rated_Product", false)
+                        Sản phẩm bán chạy nhất
+                    </label>
+                </div>
+                <div class="form-group mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("Review_Product", false)
+                        Sản phẩm có đánh giá cao nhất
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-lg btn-warning p-2">Quay lại</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</main>
+
+@{
+    var summerNote = new Webphone.Areas.Admin.Models.SummerNote("#Contents");
+    <partial name="_SummerNote" model="summerNote" />
+}
+
+
