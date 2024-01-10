@@ -30,6 +30,7 @@ namespace Webphone.Models
 
 		public DbSet<AdminMenu> AdminMenus { get; set; }
 		public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<View_Contact_Menu> view_Contact_Menus { get; set; }
 
     }
 }

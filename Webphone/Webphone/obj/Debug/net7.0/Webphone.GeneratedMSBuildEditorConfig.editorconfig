@@ -124,28 +124,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Blog/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/Details_product.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzX3Byb2R1Y3QuY3NodG1s
+[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Blog/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/List.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/List_product.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0X3Byb2R1Y3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Product/Details_product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzX3Byb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Product/List_product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxMaXN0X3Byb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/UNI/Documents/PT-ung-dung-web/PT-ung-dung-Web/Project-web-phone/Project-web-phone/Webphone/Webphone/Views/Shared/Components/Blog/Default.cshtml]

@@ -10,6 +10,11 @@ namespace Webphone.Models
 		public int ContactId { get; set; }
 		public string? Names { get; set; }
 		public string? Email { get; set; }
-		public string? ContactDate { get; set; }
-	}
+		public DateTime? ContactDate { get; set; }
+        public int? Menu_Id { get; set; }
+        public string? Phone { get; set; }
+
+        public string? Message { get; set; }
+        
+    }
 }

@@ -16,12 +16,6 @@
                     @foreach (var menu in Model.Where(m => m.Levels == 1).OrderBy(n => n.Menu_Order))
                     {
                         var Pid = menu.Menu_Id;
-                        @*string url = Functions.TitleSlugGeneration("list", menu.Menu_Name, menu.Menu_Id );
-                        if (!string.IsNullOrEmpty(menu.Link))
-                        {
-                            url = menu.Link;
-                        }
-                        *@
                         var Smenu = Model.Where(p => p.Parent_Id == Pid).OrderBy(p => p.Menu_Order).ToList();
                             @if (Smenu.Count == 0)
                             {
@@ -34,7 +28,7 @@
                                     <ul class="header__menu__dropdown">
                                         @foreach (var smn in Smenu)
                                         {
-                                                string url1 = Functions.TitleSlugGeneration("list", smn.Menu_Name, smn.Menu_Id);
+                                                string url1 = Functions.TitleSlugGeneration("contact", smn.Menu_Name, smn.Menu_Id);
                                                 if (!string.IsNullOrEmpty(smn.Link))
                                                 {
                                                     url1 = smn.Link;

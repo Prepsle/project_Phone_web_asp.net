@@ -36,7 +36,7 @@
                                 @{int i = 1;}
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
+                                    <tr id="tr_@item.Menu_Id">
                                         <th class="text-center" scope="row">@(i++)</th>
                                         <td>
                                             <a asp-area="Admin" asp-controller="Menu" asp-action="Details"
@@ -50,8 +50,7 @@
                                             <a asp-area="Admin" asp-controller="Menu" asp-action="Edit"
                                                asp-route-id="@item.Menu_Id" class="btn btn-primary btn-sm"
                                                title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
-                                            <a asp-area="Admin" asp-controller="Menu" asp-action="Delete"
-                                               asp-route-id="@item.Menu_Id" class="btn btn-danger btn-sm"
+                                            <a  data-id="@item.Menu_Id" class="btn btn-danger btn-sm btn-delete"
                                                title="Xóa thông tin bài viết"><i class="bi bi-trash"></i></a>
                                         </td>
                                     </tr>
@@ -66,3 +65,30 @@
         </div>
     </section>
 </main>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(".btn-delete").click(function () {
+                _id = $(this).data("id");
+                if (confirm("Bạn có muốn xóa không")) {
+                    $.ajax({
+                        url: "/admin/menu/delete",
+                        type: "POST",
+                        data: { id: _id },
+                        success: function (result) {
+                            if (result) {
+                                $("#tr_" + _id).remove();
+                                toastr.success('Xóa thành công');
+                            }
+                            else {
+                                toastr.error('Xóa không thành công');
+                            }
+                        }
+                    })
+                }
+
+            });
+        })
+    </script>
+}

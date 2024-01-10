@@ -149,7 +149,7 @@ namespace Webphone.Areas.Admin.Controllers
 
         // POST: Admin/Menu/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]/
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Menus == null)
